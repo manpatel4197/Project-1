@@ -1,6 +1,12 @@
-/* =========================
-   General
-========================= */
+/* ========================================
+   STUDENT REGISTRATION PORTAL
+   GitHub Pages - style.css
+======================================== */
+
+
+/* ========================================
+   RESET & GENERAL
+======================================== */
 
 * {
     box-sizing: border-box;
@@ -8,27 +14,43 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f1f5f9;
     color: #1e293b;
     line-height: 1.5;
+    min-height: 100vh;
 }
 
 
-/* =========================
-   Header
-========================= */
+/* ========================================
+   HEADER
+======================================== */
 
 .header {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-    padding: 35px 20px;
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: #ffffff;
+    padding: 40px 20px;
     text-align: center;
+}
+
+.header-content {
+    max-width: 1100px;
+    margin: auto;
 }
 
 .header h1 {
     font-size: 32px;
+    font-weight: 700;
     margin-bottom: 8px;
 }
 
@@ -38,110 +60,152 @@ body {
 }
 
 
-/* =========================
-   Container
-========================= */
+/* ========================================
+   MAIN CONTAINER
+======================================== */
 
 .container {
-    width: 95%;
+    width: 94%;
     max-width: 1100px;
     margin: 30px auto;
 }
 
 
-/* =========================
-   Card
-========================= */
+/* ========================================
+   CARD
+======================================== */
 
 .card {
-    background: white;
+    background: #ffffff;
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .card h2 {
-    margin-bottom: 20px;
     color: #1e293b;
+    font-size: 22px;
+    margin-bottom: 20px;
 }
 
 
-/* =========================
-   Form
-========================= */
+/* ========================================
+   FORM
+======================================== */
 
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 label {
     display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
+    margin-bottom: 7px;
+    color: #334155;
+    font-weight: 600;
 }
 
 input,
 select {
     width: 100%;
-    padding: 12px;
+    padding: 12px 13px;
+
     border: 1px solid #cbd5e1;
     border-radius: 8px;
+
+    background: #ffffff;
+    color: #1e293b;
+
     font-size: 16px;
-    background: white;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+input::placeholder {
+    color: #94a3b8;
 }
 
 input:focus,
 select:focus {
     outline: none;
+
     border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 
-/* =========================
-   Buttons
-========================= */
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
 
 .submit-btn {
     width: 100%;
-    padding: 13px;
+
+    padding: 13px 20px;
     margin-top: 5px;
+
     border: none;
     border-radius: 8px;
+
     background: #2563eb;
-    color: white;
+    color: #ffffff;
+
     font-size: 17px;
-    font-weight: bold;
+    font-weight: 700;
+
     cursor: pointer;
+
+    transition:
+        background 0.2s,
+        transform 0.1s;
 }
 
 .submit-btn:hover {
     background: #1d4ed8;
 }
 
-
-/* =========================
-   Success Message
-========================= */
-
-.success-message {
-    color: #15803d;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 15px;
+.submit-btn:active {
+    transform: scale(0.99);
 }
 
 
-/* =========================
-   Student List Header
-========================= */
+/* ========================================
+   SUCCESS MESSAGE
+======================================== */
+
+.success-message {
+    min-height: 24px;
+
+    margin-top: 15px;
+
+    color: #15803d;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   STUDENT LIST HEADER
+======================================== */
 
 .list-header {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     gap: 15px;
+
+    margin-bottom: 5px;
 }
 
 .list-header h2 {
@@ -149,58 +213,92 @@ select:focus {
 }
 
 #studentCount {
+    display: inline-block;
+
     background: #dbeafe;
     color: #1d4ed8;
-    padding: 6px 12px;
+
+    padding: 6px 13px;
+
     border-radius: 20px;
+
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
+
+    white-space: nowrap;
 }
 
 
-/* =========================
-   Table
-========================= */
+/* ========================================
+   TABLE
+======================================== */
 
 .table-container {
+    width: 100%;
     overflow-x: auto;
+
+    border-radius: 8px;
 }
 
 table {
     width: 100%;
-    border-collapse: collapse;
+    min-width: 850px;
+
     margin-top: 20px;
+
+    border-collapse: collapse;
+
+    background: #ffffff;
 }
 
 th,
 td {
     padding: 12px;
+
     border-bottom: 1px solid #e2e8f0;
+
     text-align: left;
+
     white-space: nowrap;
 }
 
 th {
     background: #2563eb;
-    color: white;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
 }
 
-tr:hover {
+td {
+    font-size: 14px;
+}
+
+tbody tr:hover {
     background: #f8fafc;
 }
 
 
-/* =========================
-   Delete Button
-========================= */
+/* ========================================
+   DELETE BUTTON
+======================================== */
 
 .delete-btn {
     border: none;
+
     background: #dc2626;
-    color: white;
+    color: #ffffff;
+
     padding: 7px 12px;
+
     border-radius: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+
     cursor: pointer;
+
+    transition: background 0.2s;
 }
 
 .delete-btn:hover {
@@ -208,40 +306,90 @@ tr:hover {
 }
 
 
-/* =========================
-   Empty Message
-========================= */
+/* ========================================
+   EMPTY MESSAGE
+======================================== */
 
 .empty-message {
-    text-align: center;
-    padding: 25px;
+    padding: 30px;
+
     color: #64748b;
+
+    text-align: center;
+
+    font-size: 15px;
 }
 
 
-/* =========================
-   Footer
-========================= */
+/* ========================================
+   FOOTER
+======================================== */
 
 footer {
-    text-align: center;
-    padding: 25px;
+    padding: 25px 20px;
+
     color: #64748b;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
 }
 
 
-/* =========================
-   Mobile
-========================= */
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 30px 15px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 600px) {
 
     .header h1 {
-        font-size: 25px;
+        font-size: 24px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 94%;
     }
 
     .card {
-        padding: 18px;
+        padding: 17px;
+        border-radius: 10px;
+    }
+
+    .card h2 {
+        font-size: 19px;
     }
 
     .list-header {
@@ -249,9 +397,43 @@ footer {
         align-items: flex-start;
     }
 
+    #studentCount {
+        font-size: 13px;
+    }
+
+    input,
+    select {
+        font-size: 16px;
+        padding: 11px;
+    }
+
+    .submit-btn {
+        font-size: 16px;
+    }
+
     th,
     td {
         padding: 9px;
-        font-size: 14px;
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .header p {
+        font-size: 13px;
+    }
+
+    .card {
+        padding: 14px;
     }
 }
